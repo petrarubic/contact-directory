@@ -1,10 +1,14 @@
-import { Field, Form, Formik } from "formik";
+import { Form, Formik } from "formik";
+import { InputKeys, InputLabels, InputTypes } from "../inputs/inputs";
+import InputField from "../inputs/InputField";
 import { initialLoginValues, LoginValidationSchema } from "./validators";
+import { Title } from "../../pages/Login/styled";
+import { SubmitButton } from "./styled";
 
 const LoginForm = ({ handleLogin }) => {
   return (
     <div>
-      <h1>Login</h1>
+      <Title>Login</Title>
       <Formik
         initialValues={initialLoginValues}
         validationSchema={LoginValidationSchema}
@@ -12,19 +16,23 @@ const LoginForm = ({ handleLogin }) => {
       >
         {({ errors, touched }) => (
           <Form>
-            <div>
-              <label htmlFor="email">Email</label>
-              <Field type="email" id="email" name="email" />
-              {errors.email && touched.email && <div>{errors.email}</div>}
-            </div>
-            <div>
-              <label htmlFor="password">Password</label>
-              <Field type="password" id="password" name="password" />
-              {errors.password && touched.password && (
-                <div>{errors.password}</div>
-              )}
-            </div>
-            <button type="submit">Submit</button>
+            <InputField
+              label={InputLabels.EMAIL}
+              id={InputKeys.EMAIL}
+              name={InputKeys.EMAIL}
+              type={InputTypes.EMAIL}
+              errors={errors}
+              touched={touched}
+            />
+            <InputField
+              label={InputLabels.PASSWORD}
+              id={InputKeys.PASSWORD}
+              name={InputKeys.PASSWORD}
+              type={InputTypes.PASSWORD}
+              errors={errors}
+              touched={touched}
+            />
+            <SubmitButton type="submit">Submit</SubmitButton>
           </Form>
         )}
       </Formik>

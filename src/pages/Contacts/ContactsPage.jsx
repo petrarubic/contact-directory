@@ -1,4 +1,4 @@
-import useRequireAuth from "../utils/useRequireAuth";
+import useRequireAuth from "../../utils/useRequireAuth";
 
 const ContactsPage = () => {
   useRequireAuth();
