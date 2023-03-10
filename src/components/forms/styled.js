@@ -12,3 +12,10 @@ export const SubmitButton = styled.button`
   background-color: #0974f1;
   margin-top: 10px;
 `;
+
+export const FormTitle = styled.h1`
+  font-family: "Montserrat";
+  font-size: 28px;
+  color: #043976;
+  font-weight: 700;
+`;

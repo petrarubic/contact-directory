@@ -2,13 +2,12 @@ import { Form, Formik } from "formik";
 import { InputKeys, InputLabels, InputTypes } from "../inputs/inputs";
 import InputField from "../inputs/InputField";
 import { initialLoginValues, LoginValidationSchema } from "./validators";
-import { Title } from "../../pages/Login/styled";
-import { SubmitButton } from "./styled";
+import { SubmitButton, FormTitle } from "./styled";
 
 const LoginForm = ({ handleLogin }) => {
   return (
     <div>
-      <Title>Login</Title>
+      <FormTitle>Login</FormTitle>
       <Formik
         initialValues={initialLoginValues}
         validationSchema={LoginValidationSchema}

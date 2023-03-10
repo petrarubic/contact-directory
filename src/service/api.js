@@ -11,7 +11,7 @@ import {
 
 const contactCollectionRef = collection(db, "contacts");
 
-export async function addContact({ contact }) {
+export async function addContact(contact) {
   try {
     return addDoc(contactCollectionRef, contact);
   } catch (error) {
